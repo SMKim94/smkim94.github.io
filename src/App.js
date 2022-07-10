@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import randomColor from 'randomcolor';
-import { ReactComponent as Logo } from 'assets/images/svg/logo.svg';
 
 const App = () => {
-	const [logoColor, setLogoColor] = useState('#61DAFB');
 	const [textCount, setTextCount] = useState(10);
 
 	const makeRandomStyle = () => {
@@ -16,14 +14,8 @@ const App = () => {
 		}
 	}
 
-	const changeLogoColor = () => {
-		const color = randomColor();
-		setLogoColor(color);
-	}
-
 	const changeRandom = (e) => {
 		e.preventDefault();
-		changeLogoColor();
 		setTextCount(Math.round(Math.random() * 50));
 	}
 
