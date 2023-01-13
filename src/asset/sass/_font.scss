@@ -1,0 +1,23 @@
+/**
+ * 폰트 설정
+ * $name    {string} 폰트 이름
+ * $file    {string} 폰트 파일 이름
+ * $ext     {string} 폰트 확장자
+ * $weight  {number} 폰트 굵기
+ * $style   {string} 폰트 스타일
+ */
+@mixin font-face($name, $file, $ext, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: '#{$name}';
+		src: url('../font/#{$file}.#{$ext}');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+@import '../font/Inter/inter';
+@include font-face('D2Coding', 'D2Coding-Ver1.3.2-20180524-all', 'ttc');
+@include font-face('NanumGothic', 'NanumGothic', 'ttf', normal);
+@include font-face('NanumGothic', 'NanumGothicBold', 'ttf', bold);
+@include font-face('NanumGothic', 'NanumGothicExtraBold', 'ttf', bolder);
+@include font-face('NanumGothic', 'NanumGothicLight', 'ttf', lighter);

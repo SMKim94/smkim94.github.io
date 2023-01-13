@@ -1,31 +1,24 @@
-import { useState } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { useTimeoutFn } from './utils';
-import MainLayout from 'layouts/MainLayout';
-import Loading from 'pages/Loading';
+import logo from './asset/img/logo.svg';
 
 const App = () => {
-	const [router, setRouter] = useState(
-		createBrowserRouter([
-			{
-				path: '/',
-				element: <Loading />,
-			},
-		])
+	return (
+		<div className='App'>
+			<header className='App-header'>
+				<img src={logo} className='App-logo' alt='logo' />
+				<p>
+					Edit <code>src/App.js</code> and save to reload.
+				</p>
+				<a
+					className='App-link'
+					href='https://reactjs.org'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					Learn React
+				</a>
+			</header>
+		</div>
 	);
-
-	useTimeoutFn(() => {
-		setRouter(
-			createBrowserRouter([
-				{
-					path: '/',
-					element: <MainLayout />,
-				},
-			])
-		);
-	}, 1000);
-
-	return <RouterProvider router={router} />;
 };
 
 export default App;
